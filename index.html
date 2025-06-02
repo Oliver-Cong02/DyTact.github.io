@@ -280,7 +280,7 @@
             <div class="row justify-content-center">
               <div class="column">
                 <p class="mb-5">
-                  <a class="btn btn-large btn-light" href="https://drive.google.com/file/d/1nsgAV841NDyINoY0k14IdbqCMIKGCjwj/view?usp=sharing" role="button" target="_blank">
+                  <a class="btn btn-large btn-light" href="https://drive.google.com/file/d/1BAw44kO5ixlG9eG_4vNG-KLOV5j4nfla/view?usp=sharing" role="button" target="_blank">
                     <i class="fa fa-file-pdf-o"></i>
                     <b>Paper</b>
                   </a>
@@ -288,15 +288,7 @@
               </div>
               <div class="column">
                 <p class="mb-5">
-                  <a class="btn btn-large btn-light" href="https://drive.google.com/file/d/1JJzTs_Nq4xDoxTBJEehY1jPnJfKvYQok/view?usp=sharing" role="button" target="_blank">
-                    <i class="fa fa-file-pdf-o"></i>
-                    <b>Supp Mat</b>
-                  </a>
-                </p>
-              </div>
-              <div class="column">
-                <p class="mb-5">
-                  <a class="btn btn-large btn-light" href="https://arxiv.org/abs/2502.20370" role="button" target="_blank">
+                  <a class="btn btn-large btn-light" href="https://drive.google.com/file/d/1BAw44kO5ixlG9eG_4vNG-KLOV5j4nfla/view?usp=sharing" role="button" target="_blank">
                     <i class="ai ai-arxiv"></i>
                     <b>arXiv</b>
                   </a>
@@ -304,7 +296,7 @@
               </div>
               <div class="column">
                 <p class="mb-5">
-                  <a class="btn btn-large btn-light" href="https://github.com/zju3dv/ready_to_react" role="button" target="_blank">
+                  <a class="btn btn-large btn-light" href="https://github.com/Oliver-Cong02/DyTact" role="button" target="_blank">
                     <i class="fa fa-github"></i>
                     <b>Code</b>
                   </a>
@@ -323,9 +315,27 @@
         <div class="col-12">
           <h3>Abstract</h3>
           <hr style="margin-top: 0px" />
-          <!-- <img src="img/overview.jpg" width="100%" /> -->
+          <p style="text-align:center;"> 
+            <img src="img/teaser.png" width="80%"/>
+          </p>
           <p class="text-left">
-            This paper addresses the task of generating two-character online interactions. Previously, two main settings existed for two-character interaction generation: (1) generating one’s motions based on the counterpart’s complete motion sequence, and (2) jointly generating two-character motions based on specific conditions. We argue that these settings fail to model the process of real-life two-character interactions, where humans will react to their counterparts in real time and act as independent individuals. In contrast, <strong>we propose an online reaction policy, called Ready-to-React, to generate the next character pose based on past observed motions.</strong> Each character has its own reaction policy as its “brain”, enabling them to interact like real humans in a streaming manner. Our policy is implemented by incorporating a diffusion head into an auto-regressive model, which can dynamically respond to the counterpart’s motions while effectively mitigating the error accumulation throughout the generation process. We conduct comprehensive experiments using the challenging boxing task. Experimental results demonstrate that our method outperforms existing baselines and can generate extended motion sequences. Additionally, we show that our approach can be controlled by sparse signals, making it well-suited for VR and other online interactive environments.
+            Reconstructing dynamic hand-object contacts is essential for realistic manipulation in AI character animation, XR, and robotics, yet it remains challenging due to heavy occlusions, complex surface details, and limitations in existing capture techniques. In this paper, we introduce DyTact, a markerless capture method for accurately capturing dynamic contact in hand–object manipulations in a non-intrusive manner. Our approach leverages a dynamic, articulated representation based on 2D Gaussian surfels to model complex manipulations. By binding these surfels to MANO meshes, DyTact harnesses the inductive bias of template models to stabilize and accelerate optimization. A refinement module addresses time-dependent high-frequency deformations, while a contact-guided adaptive sampling strategy selectively increases surfel density in contact regions to handle heavy occlusion. Extensive experiments demonstrate that DyTact not only achieves state-of-the-art dynamic contact estimation accuracy but also significantly improves novel view synthesis quality, all while operating with fast optimization and efficient memory usage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TLDR -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h3>TL;DR</h3>
+          <hr style="margin-top: 0px" />
+          <p class="text-left">
+            (1) We introduce <span style="color: #c68b5b">DyTact</span>, a method for accurate <span style="color: #c68b5b">Dy</span>namic con<span style="color: #c68b5b">Tact</span> capture in complex hand-object manipulation.<br>
+            (2) <span style="color: #c68b5b">DyTact</span> reconstructs <strong>both the hand and the object</strong> with dynamic 2D Gaussian surfels, enabling high-fidelity surface modeling without misalignments. We propose a contact-guided adaptive density control strategy to effectively address self-occlusions and object occlusions, as well as a time-dependent refinement module that precisely captures complex surface deformations for accurate contact estimation and dynamic reconstruction.<br>
+            (3) Experimental results demonstrate the superior performance of DyTact in accurate dynamic contact estimation and high-fidelity novel view synthesis, coupled with fast optimization and efficient memory usage. 
           </p>
         </div>
       </div>
@@ -339,10 +349,10 @@
           <h3>Method Overview</h3>
           <hr style="margin-top: 0px" />
           <p style="text-align:center;"> 
-            <img src="img/pipeline.jpg" width="80%"/>
+            <img src="img/pipeline.png" width="80%"/>
           </p>
           <p>
-            <strong>Overview of our online reaction policy.</strong> Given a boxing scene at the leftmost figure, where the <strong><span style="color: #6E8BC5">blue agent</span></strong> is thinking about its next move. The reaction policy follows these steps: first, based on the observations, the history encoder encodes the current state and observations; then, the next latent predictor predicts the upcoming motion latent; and finally, an online motion decoder decodes this motion latent into the actual next pose. The same reaction policy can be applied to the <strong><span style="color: #D0A7C9">pink agent</span></strong>. Through a streaming process for both agents, our reaction policy enables the continuous generation of two-character motion sequences without length limit.
+          <span style="color: #c68b5b">DyTact</span> captures dynamic contacts with a markerless system using a surface-aware dynamic articulated Gaussian representation. Given multi-view RGB videos, it initializes Gaussian surfels on the hand by binding them to the tracked MANO mesh locally, which remain rigged throughout optimization. For objects, Gaussians are initialized by placing a coarse point cloud in the global coordinate space. A refinement module addresses time-dependent high-frequency deformations. A contact-guided adaptive sampling strategy selectively refines surfel density in contact regions to handle heavy occlusion, and further optimization of the surfels’ geometry and appearance parameters ensures high-fidelity reconstructions that enable accurate contact estimation.
           </p>
         </div>
       </div>
