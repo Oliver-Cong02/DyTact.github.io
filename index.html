@@ -316,10 +316,10 @@
           <h3>Abstract</h3>
           <hr style="margin-top: 0px" />
           <p style="text-align:center;"> 
-            <img src="img/teaser.png" width="80%"/>
+            <img src="img/teaser.png" width="99%"/>
           </p>
           <p class="text-left">
-            Reconstructing dynamic hand-object contacts is essential for realistic manipulation in AI character animation, XR, and robotics, yet it remains challenging due to heavy occlusions, complex surface details, and limitations in existing capture techniques. In this paper, we introduce DyTact, a markerless capture method for accurately capturing dynamic contact in hand–object manipulations in a non-intrusive manner. Our approach leverages a dynamic, articulated representation based on 2D Gaussian surfels to model complex manipulations. By binding these surfels to MANO meshes, DyTact harnesses the inductive bias of template models to stabilize and accelerate optimization. A refinement module addresses time-dependent high-frequency deformations, while a contact-guided adaptive sampling strategy selectively increases surfel density in contact regions to handle heavy occlusion. Extensive experiments demonstrate that DyTact not only achieves state-of-the-art dynamic contact estimation accuracy but also significantly improves novel view synthesis quality, all while operating with fast optimization and efficient memory usage.
+            Reconstructing dynamic hand-object contacts is essential for realistic manipulation in AI character animation, XR, and robotics, yet it remains challenging due to heavy occlusions, complex surface details, and limitations in existing capture techniques. In this paper, we introduce <strong><span style="color: #c68b5b">DyTact</span></strong>, a markerless capture method for accurately capturing dynamic contact in hand–object manipulations in a non-intrusive manner. Our approach leverages a dynamic, articulated representation based on 2D Gaussian surfels to model complex manipulations. By binding these surfels to MANO meshes, DyTact harnesses the inductive bias of template models to stabilize and accelerate optimization. A refinement module addresses time-dependent high-frequency deformations, while a contact-guided adaptive sampling strategy selectively increases surfel density in contact regions to handle heavy occlusion. Extensive experiments demonstrate that DyTact not only achieves state-of-the-art dynamic contact estimation accuracy but also significantly improves novel view synthesis quality, all while operating with fast optimization and efficient memory usage.
           </p>
         </div>
       </div>
@@ -333,8 +333,8 @@
           <h3>TL;DR</h3>
           <hr style="margin-top: 0px" />
           <p class="text-left">
-            (1) We introduce <span style="color: #c68b5b">DyTact</span>, a method for accurate <span style="color: #c68b5b">Dy</span>namic con<span style="color: #c68b5b">Tact</span> capture in complex hand-object manipulation.<br>
-            (2) <span style="color: #c68b5b">DyTact</span> reconstructs <strong>both the hand and the object</strong> with dynamic 2D Gaussian surfels, enabling high-fidelity surface modeling without misalignments. We propose a contact-guided adaptive density control strategy to effectively address self-occlusions and object occlusions, as well as a time-dependent refinement module that precisely captures complex surface deformations for accurate contact estimation and dynamic reconstruction.<br>
+            (1) We introduce <strong><span style="color: #c68b5b">DyTact</span></strong>, a method for accurate <strong><span style="color: #c68b5b">Dy</span></strong>namic con<strong><span style="color: #c68b5b">Tact</span></strong> capture in complex hand-object manipulation.<br>
+            (2) <strong><span style="color: #c68b5b">DyTact</span></strong> reconstructs <strong>both the hand and the object</strong> with dynamic 2D Gaussian surfels, enabling high-fidelity surface modeling without misalignments. We propose a contact-guided adaptive density control strategy to effectively address self-occlusions and object occlusions, as well as a time-dependent refinement module that precisely captures complex surface deformations for accurate contact estimation and dynamic reconstruction.<br>
             (3) Experimental results demonstrate the superior performance of DyTact in accurate dynamic contact estimation and high-fidelity novel view synthesis, coupled with fast optimization and efficient memory usage. 
           </p>
         </div>
@@ -349,10 +349,10 @@
           <h3>Method Overview</h3>
           <hr style="margin-top: 0px" />
           <p style="text-align:center;"> 
-            <img src="img/pipeline.png" width="80%"/>
+            <img src="img/pipeline.png" width="99%"/>
           </p>
           <p>
-          <span style="color: #c68b5b">DyTact</span> captures dynamic contacts with a markerless system using a surface-aware dynamic articulated Gaussian representation. Given multi-view RGB videos, it initializes Gaussian surfels on the hand by binding them to the tracked MANO mesh locally, which remain rigged throughout optimization. For objects, Gaussians are initialized by placing a coarse point cloud in the global coordinate space. A refinement module addresses time-dependent high-frequency deformations. A contact-guided adaptive sampling strategy selectively refines surfel density in contact regions to handle heavy occlusion, and further optimization of the surfels’ geometry and appearance parameters ensures high-fidelity reconstructions that enable accurate contact estimation.
+          <strong><span style="color: #c68b5b">DyTact</span></strong> captures dynamic contacts with a markerless system using a surface-aware dynamic articulated Gaussian representation. Given multi-view RGB videos, it initializes Gaussian surfels on the hand by binding them to the tracked MANO mesh locally, which remain rigged throughout optimization. For objects, Gaussians are initialized by placing a coarse point cloud in the global coordinate space. A refinement module addresses time-dependent high-frequency deformations. A contact-guided adaptive sampling strategy selectively refines surfel density in contact regions to handle heavy occlusion, and further optimization of the surfels’ geometry and appearance parameters ensures high-fidelity reconstructions that enable accurate contact estimation.
           </p>
         </div>
       </div>
